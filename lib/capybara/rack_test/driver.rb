@@ -86,6 +86,10 @@ class Capybara::RackTest::Driver < Capybara::Driver::Base
     @browser = nil
   end
 
+  def assert_reset_complete
+    raise "driver reset! was not successful" if !@browser.nil?
+  end
+
   def get(*args, &block); browser.get(*args, &block); end
   def post(*args, &block); browser.post(*args, &block); end
   def put(*args, &block); browser.put(*args, &block); end

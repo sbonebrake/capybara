@@ -114,6 +114,10 @@ class Capybara::Selenium::Driver < Capybara::Driver::Base
     end
   end
 
+  def assert_reset_complete
+    assert_no_selector :xpath, "/html/body/*" if @browser
+  end
+
   ##
   #
   # Webdriver supports frame name, id, index(zero-based) or {Capybara::Element} to find iframe

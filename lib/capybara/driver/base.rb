@@ -130,6 +130,10 @@ class Capybara::Driver::Base
   def reset!
   end
 
+  def assert_reset_complete
+    assert_no_selector :xpath, "/html/body/*"
+  end
+
   def needs_server?
     false
   end
