@@ -111,6 +111,7 @@ class Capybara::Selenium::Driver < Capybara::Driver::Base
         # try cleaning up the browser again
         retry
       end
+      assert_no_selector :xpath, "/html/body/*"
     end
   end
 
